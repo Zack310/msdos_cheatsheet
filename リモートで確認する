@@ -1,0 +1,9 @@
+ログインしている人を確認する
+psexec \\machine_name -u domain\user query user
+
+Remote Desktop Usersのユーザーを一覧取得してファイルにする
+対象コンピュータ名を一行ずつ記したテキスト・ファイルを用意し、@＜テキスト・ファイル名＞というオプションを指定してPsExecを実行してもよい。
+psexec \\machine_name -u domain\user -p ログインするユーザのPWpassword net localgroup "Remote Desktop Users" > c:\temp\Remote_list.txt
+
+フォルダのみ表示してファイル作成
+dir /ad /b > c:\temp\folder.txt
